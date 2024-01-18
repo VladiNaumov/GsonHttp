@@ -1,4 +1,4 @@
-package org.example.model;
+package fi.naumdeveloper.model;
 
 public class Library {
 

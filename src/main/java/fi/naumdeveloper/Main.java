@@ -1,6 +1,6 @@
-package org.example;
+package fi.naumdeveloper;
 
-import org.example.parser.GsonParser;
+import fi.naumdeveloper.parser.GsonParser;
 
 public class Main {
     public static void main(String[] args)  {

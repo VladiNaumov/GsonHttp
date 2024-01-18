@@ -1,9 +1,9 @@
-package org.example.parser;
+package fi.naumdeveloper.parser;
 
 import com.google.gson.Gson;
-import org.example.http.MyHttpClient;
-import org.example.model.Library;
-import org.example.model.Root;
+import fi.naumdeveloper.http.MyHttpClient;
+import fi.naumdeveloper.model.Library;
+import fi.naumdeveloper.model.Root;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;;

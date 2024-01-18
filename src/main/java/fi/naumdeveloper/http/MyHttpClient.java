@@ -1,4 +1,4 @@
-package org.example.http;
+package fi.naumdeveloper.http;
 
 import java.io.IOException;
 import java.net.URI;
