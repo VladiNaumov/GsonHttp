@@ -6,7 +6,7 @@ import fi.naumdeveloper.model.Book;
 import fi.naumdeveloper.model.Root;
 
 import java.io.FileNotFoundException;
-import java.io.FileReader;;
+import java.io.FileReader;
 
 public class GsonParser {
 
@@ -21,7 +21,7 @@ public class GsonParser {
                 System.out.println(book);
             }
         } catch (FileNotFoundException e) {
-            System.out.println("Parser error " + e.toString());
+            System.out.println("Parser error " + e);
         }
     }
 
