@@ -1,6 +1,6 @@
 package fi.naumdeveloper.model;
 
-public class Library {
+public class Book {
 
     private int id;
     private String photo;
@@ -8,7 +8,7 @@ public class Library {
     private String nameBook;
     private String description;
 
-    public Library(int id, String photo, String author, String nameBook, String description) {
+    public Book(int id, String photo, String author, String nameBook, String description) {
         this.id = id;
         this.photo = photo;
         this.author = author;
