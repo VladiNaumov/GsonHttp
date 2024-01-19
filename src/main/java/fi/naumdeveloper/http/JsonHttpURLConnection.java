@@ -6,7 +6,7 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-public class MyHttpUrl {
+public class JsonHttpURLConnection {
 
     public static void HttpUrl() throws IOException {
 

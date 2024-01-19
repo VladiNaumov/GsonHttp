@@ -6,9 +6,9 @@ import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 
-public class MyHttpClient {
+public class JsonHttpClient {
 
-    public static String HttpClient()  {
+    public static String HttpClient() {
 
         HttpRequest request = HttpRequest.newBuilder()
                 .uri(URI.create("https://your-demo.site/api/library"))
@@ -23,15 +23,16 @@ public class MyHttpClient {
                 // .authenticator(Authenticator.getDefault())
                 .build();
 
+        HttpResponse<String> response = null;
         try {
-            HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
-            return response.body();
+            response = client.send(request, HttpResponse.BodyHandlers.ofString());
+            ;
             //System.out.println("статус ответа с сервера:  " + response.statusCode());
             // System.out.println(response.body());
         } catch (IOException | InterruptedException e) {
             throw new RuntimeException(e);
 
         }
-
+        return response.body();
     }
 }
