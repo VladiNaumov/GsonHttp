@@ -10,7 +10,7 @@ public class JsonHttpClient {
 
     private static final String HTTP_URL ="https://your-demo.site/api/library";
 
-    public static String HttpClient() {
+    public static String getHttpClient() {
 
         HttpRequest request = HttpRequest.newBuilder()
                 .uri(URI.create(HTTP_URL))

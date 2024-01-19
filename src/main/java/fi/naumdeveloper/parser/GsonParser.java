@@ -12,7 +12,7 @@ public class GsonParser {
 
      private static final Gson gson = new Gson();
 
-    public static void parserFile() {
+    public static void getParserFile() {
         try {
             FileReader reader = new FileReader("library.json");
             Root root = gson.fromJson(reader, Root.class);
@@ -25,8 +25,8 @@ public class GsonParser {
         }
     }
 
-    public static void parserHttp() {
-        String str = JsonHttpClient.HttpClient();
+    public static void getParserHttp() {
+        String str = JsonHttpClient.getHttpClient();
         Root root = gson.fromJson(str, Root.class);
         //System.out.println(root);
         for (Book book : root.getLibrary()) {
