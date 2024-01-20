@@ -2,11 +2,12 @@ package fi.naumdeveloper;
 
 import fi.naumdeveloper.parser.GsonParser;
 
+import java.io.IOException;
+
 public class Main {
-    public static void main(String[] args)  {
+    public static void main(String[] args) {
 
-        GsonParser.parserHttp();
-       // GsonParser.parserFile();
-
+       //GsonParser.getParserHttp();
+       GsonParser.getParserHttpConnect();
     }
 }
