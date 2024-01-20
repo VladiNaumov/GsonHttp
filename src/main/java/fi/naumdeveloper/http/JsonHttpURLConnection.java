@@ -8,33 +8,25 @@ import java.net.URL;
 
 public class JsonHttpURLConnection {
 
-    public static void HttpUrl() throws IOException {
+    public static String HttpUrl()  {
 
-        final URL url = new URL("https://your-demo.site/api/library");
-        final HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+        try {
+            final URL url = new URL("https://your-demo.site/api/library");
+            final HttpURLConnection connection = (HttpURLConnection) url.openConnection();
 
-        connection.setRequestMethod("GET");
-        connection.setRequestProperty("Content-Type", "application/json");
-        connection.setConnectTimeout(1000);
-        connection.setReadTimeout(1000);
+            connection.setRequestMethod("GET");
+            connection.setRequestProperty("Content-Type", "application/json");
+            connection.setConnectTimeout(1000);
+            connection.setReadTimeout(1000);
 
+            final BufferedReader in = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+            return in.readLine();
 
-        try (final BufferedReader in = new BufferedReader(new InputStreamReader(connection.getInputStream()))) {
-            //System.out.println("in.readLine(): " + in.readLine());
-
-            String inputLine;
-            final StringBuilder content = new StringBuilder();
-            while ((inputLine = in.readLine()) != null) {
-                content.append(inputLine);
-            }
-            System.out.println(content);
-
-        } catch (final Exception ex) {
-            ex.printStackTrace();
-
+        } catch (IOException e) {
+            System.out.println("JsonHttpURLConnection error " + e);
         }
 
-
+        return null;
     }
 
 }
