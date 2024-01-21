@@ -29,12 +29,14 @@ public class GsonParser {
     public static void getParserHttp() {
         String str = JsonHttpClient.getHttpClient();
         Root root = gson.fromJson(str, Root.class);
-        //System.out.println(root);
+        System.out.println(root.getLibrary());
+
+        /*
         for (Book book : root.getLibrary()) {
             System.out.println(book);
         }
+         */
     }
-
 
     public static void getParserHttpConnect() {
        String str = JsonHttpURLConnection.HttpUrl();

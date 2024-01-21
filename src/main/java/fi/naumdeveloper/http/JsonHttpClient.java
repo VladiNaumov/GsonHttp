@@ -1,6 +1,5 @@
 package fi.naumdeveloper.http;
 
-import java.io.IOException;
 import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
@@ -12,9 +11,14 @@ public class JsonHttpClient {
 
     public static String getHttpClient() {
 
-        HttpRequest request = HttpRequest.newBuilder()
-                .uri(URI.create(HTTP_URL))
+        // Create an instance of HttpClient
+        // Define the URI for the GET request
+        URI uri = URI.create(HTTP_URL);
+
+        // Create an instance of HttpRequest with the GET method
+        HttpRequest httpRequest = HttpRequest.newBuilder()
                 .GET()
+                .uri(uri)
                 .build();
 
         HttpClient client = HttpClient.newBuilder()
@@ -25,15 +29,15 @@ public class JsonHttpClient {
                 // .authenticator(Authenticator.getDefault())
                 .build();
 
-        HttpResponse<String> response;
         try {
-            response = client.send(request, HttpResponse.BodyHandlers.ofString());
-            //System.out.println("статус ответа с сервера:  " + response.statusCode());
-            // System.out.println(response.body());
-        } catch (IOException | InterruptedException e) {
-            throw new RuntimeException(e);
-
+            // Send the request and receive the response
+            HttpResponse<String> httpResponse = client.send(httpRequest, HttpResponse.BodyHandlers.ofString());
+              return httpResponse.body();
+            // System.out.println("Status Code: " + httpResponse.statusCode());
+           // System.out.println("Response Body: " + httpResponse.body());
+        } catch (Exception e) {
+            e.printStackTrace();
         }
-        return response.body();
+            return null;
     }
 }
