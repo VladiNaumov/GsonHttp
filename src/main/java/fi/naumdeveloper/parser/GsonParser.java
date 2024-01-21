@@ -2,7 +2,7 @@ package fi.naumdeveloper.parser;
 
 import com.google.gson.Gson;
 import fi.naumdeveloper.http.JsonHttpClient;
-import fi.naumdeveloper.http.JsonHttpURLConnection;
+import fi.naumdeveloper.http.JsonHttpConnection;
 import fi.naumdeveloper.model.Book;
 import fi.naumdeveloper.model.Root;
 
@@ -39,7 +39,7 @@ public class GsonParser {
     }
 
     public static void getParserHttpConnect() {
-       String str = JsonHttpURLConnection.HttpUrl();
+       String str = JsonHttpConnection.HttpUrl();
         Root root = gson.fromJson(str, Root.class);
         //System.out.println(root);
         for (Book book : root.getLibrary()) {

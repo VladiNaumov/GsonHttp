@@ -11,7 +11,6 @@ public class JsonHttpClient {
 
     public static String getHttpClient() {
 
-        // Create an instance of HttpClient
         // Define the URI for the GET request
         URI uri = URI.create(HTTP_URL);
 
@@ -21,6 +20,7 @@ public class JsonHttpClient {
                 .uri(uri)
                 .build();
 
+        // Create an instance of HttpClient
         HttpClient client = HttpClient.newBuilder()
                 .version(HttpClient.Version.HTTP_2)
                 .followRedirects(HttpClient.Redirect.NORMAL)

@@ -6,12 +6,13 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-public class JsonHttpURLConnection {
+public class JsonHttpConnection {
+    private static final String HTTP_URL ="https://your-demo.site/api/library";
 
     public static String HttpUrl()  {
 
         try {
-            final URL url = new URL("https://your-demo.site/api/library");
+            final URL url = new URL(HTTP_URL);
             final HttpURLConnection connection = (HttpURLConnection) url.openConnection();
 
             connection.setRequestMethod("GET");
